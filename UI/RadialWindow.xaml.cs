@@ -42,6 +42,7 @@ public partial class RadialWindow : Window
     public void UpdateCursor(WpfPoint position)
     {
         _menu.UpdateSelection(position);
+        _renderer?.UpdateCursor(new WpfPoint(position.X - Left, position.Y - Top));
         _renderer?.Update(State, false);
     }
 
@@ -56,7 +57,9 @@ public partial class RadialWindow : Window
         var handle = new WindowInteropHelper(this).Handle;
         var region = CreateEllipticRgn(0, 0, 360, 360);
         SetWindowRgn(handle, region, true);
-        _renderer = new SkiaRadialRenderer(SkiaSurface);
+        WindowBackdropHelper.ApplyAcrylic(this);
+        var backdrop = DesktopBackdropCapture.CaptureBehindWindow(handle, LiquidGlassSettings.Default);
+        _renderer = new SkiaRadialRenderer(SkiaSurface, backdrop?.Image, LiquidGlassSettings.Default);
         _renderer.Update(State, false);
     }
 

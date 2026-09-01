@@ -11,6 +11,6 @@
         IsHitTestVisible="True"
         Title="RadialMenu">
     <Grid x:Name="RadialContainer" Width="360" Height="360">
-        <skia:SKGLElement x:Name="SkiaSurface" />
+        <skia:SKElement x:Name="SkiaSurface" />
     </Grid>
 </Window>

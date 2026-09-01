@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "T:\\Project-Radial\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|T:\\Project-Radial\\UI\\LiquidGlassSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UI\\LiquidGlassSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|T:\\Project-Radial\\UI\\RadialWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UI\\RadialWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LiquidGlassSettings.cs",
+              "DocumentMoniker": "T:\\Project-Radial\\UI\\LiquidGlassSettings.cs",
+              "RelativeDocumentMoniker": "UI\\LiquidGlassSettings.cs",
+              "ToolTip": "T:\\Project-Radial\\UI\\LiquidGlassSettings.cs",
+              "RelativeToolTip": "UI\\LiquidGlassSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T06:27:22.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "RadialWindow.xaml.cs",
               "DocumentMoniker": "T:\\Project-Radial\\UI\\RadialWindow.xaml.cs",
               "RelativeDocumentMoniker": "UI\\RadialWindow.xaml.cs",
@@ -26,8 +43,7 @@
               "RelativeToolTip": "UI\\RadialWindow.xaml.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T02:29:07.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T02:29:07.717Z"
             }
           ]
         }
