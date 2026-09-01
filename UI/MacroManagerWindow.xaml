@@ -1,0 +1,34 @@
+<Window x:Class="Radial.UI.MacroManagerWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Radial Macro Manager" Width="720" Height="480" WindowStartupLocation="CenterScreen">
+  <DockPanel Margin="16">
+    <StackPanel DockPanel.Dock="Top">
+      <TextBlock Text="Macros" FontSize="24" FontWeight="SemiBold" />
+      <TextBlock Text="Record input events, save them locally, and test playback." Margin="0,4,0,14" Foreground="Gray" />
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+        <TextBlock Text="Target application:" VerticalAlignment="Center" Margin="0,0,8,0" />
+        <ComboBox x:Name="Applications" Width="400" DisplayMemberPath="DisplayName" />
+        <Button x:Name="RefreshButton" Content="Refresh" Click="Refresh_Click" Margin="8,0,0,0" Padding="12,4" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+        <TextBlock Text="Profile:" VerticalAlignment="Center" Margin="0,0,8,0" />
+        <ComboBox x:Name="Profiles" Width="250" DisplayMemberPath="DisplayName" SelectionChanged="Profile_Changed" />
+        <TextBlock Text="Wheel:" VerticalAlignment="Center" Margin="18,0,8,0" />
+        <ListBox x:Name="Wheels" Width="140" DisplayMemberPath="Name" SelectionChanged="Wheel_Changed" PreviewMouseRightButtonDown="Wheels_RightButtonDown" ContextMenuOpening="Wheels_ContextMenuOpening" />
+        <Button Content="+ Add Wheel" Click="AddWheel_Click" Margin="8,0,0,0" Padding="10,4" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,14">
+        <Button x:Name="RecordButton" Content="Record Macro" Click="Record_Click" Padding="14,6" />
+        <Button x:Name="StopButton" Content="Stop Recording" Click="Stop_Click" Padding="14,6" Margin="8,0,0,0" IsEnabled="False" />
+        <TextBlock x:Name="Status" Text="Ready" VerticalAlignment="Center" Margin="14,0,0,0" />
+      </StackPanel>
+      <TextBlock x:Name="DetectedShortcut" Text="Detected shortcut: —" FontSize="16" Margin="0,0,0,12" />
+    </StackPanel>
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+      <Button Content="Run / Test" Click="Run_Click" Padding="14,6" />
+      <Button Content="Rename" Click="Rename_Click" Padding="14,6" Margin="8,0,0,0" />
+      <Button Content="Delete" Click="Delete_Click" Padding="14,6" Margin="8,0,0,0" />
+    </StackPanel>
+    <ListBox x:Name="MacroList">
+      <ListBox.ItemTemplate><DataTemplate><StackPanel Margin="4"><TextBlock Text="{Binding Name}" FontWeight="SemiBold"/><TextBlock Text="{Binding Shortcut.DisplayText}" Foreground="Gray"/></StackPanel></DataTemplate></ListBox.ItemTemplate>
+    </ListBox>
+  </DockPanel>
+</Window>

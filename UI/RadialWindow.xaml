@@ -1,45 +1,16 @@
 <Window x:Class="Radial.UI.RadialWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        WindowStyle="None" 
-        AllowsTransparency="True" 
+        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
+        WindowStyle="None"
+        AllowsTransparency="True"
         Background="Transparent"
-        ShowInTaskbar="False" 
-        ShowActivated="False" 
-        Topmost="True" 
-        IsHitTestVisible="True">
-
-    <Window.Resources>
-        <!-- Acrylic treatment for the selector only. The window itself remains transparent. -->
-        <RadialGradientBrush x:Key="AppleGlassBrush" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-            <GradientStop Color="#301E202A" Offset="0.0" />
-            <GradientStop Color="#20282B37" Offset="0.80" />
-            <GradientStop Color="#153A3E4E" Offset="1.0" />
-        </RadialGradientBrush>
-
-        <!-- Subtle Outer Glass Border Glow -->
-        <LinearGradientBrush x:Key="GlassBorderBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#50FFFFFF" Offset="0" />
-            <GradientStop Color="#15FFFFFF" Offset="0.5" />
-            <GradientStop Color="#30FFFFFF" Offset="1" />
-        </LinearGradientBrush>
-    </Window.Resources>
-
-    <Grid HorizontalAlignment="Center"
-          VerticalAlignment="Center">
-        <Grid.Clip>
-            <EllipseGeometry Center="180,180" RadiusX="180" RadiusY="180" />
-        </Grid.Clip>
-        <Grid x:Name="RadialContainer"
-              Width="360"
-              Height="360">
-            <!-- Acrylic selector surface; outside this ellipse the window is completely transparent. -->
-            <Ellipse Fill="{StaticResource AppleGlassBrush}"
-                     Stroke="{StaticResource GlassBorderBrush}"
-                     StrokeThickness="1.2" />
-
-            <!-- Dynamic Sectors Layer -->
-            <Canvas x:Name="MenuCanvas" Width="360" Height="360" />
-        </Grid>
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        IsHitTestVisible="True"
+        Title="RadialMenu">
+    <Grid x:Name="RadialContainer" Width="360" Height="360">
+        <skia:SKGLElement x:Name="SkiaSurface" />
     </Grid>
 </Window>
